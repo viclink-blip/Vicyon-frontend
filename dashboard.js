@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!token) return;
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/connection/status", {
+      const res = await fetch("http://vicyon.onrender.com/connection/status", {
         headers: { "Authorization": `Bearer ${token}` }
       });
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const res = await fetch(`http://127.0.0.1:5000/connection/request/${receiverId}`, {
+    const res = await fetch(`http://vicyon.onrender.com/connection/request/${receiverId}`, {
       method: "POST",
       headers: { "Authorization": `Bearer ${token}` }
     });
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/connection/incoming", {
+      const res = await fetch("http://vicyon.onrender.com/connection/incoming", {
         headers: { "Authorization": `Bearer ${token}` }
       });
 
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".accept-btn").forEach(btn => {
         btn.addEventListener("click", async () => {
           const fromId = btn.dataset.id;
-          const res = await fetch(`http://127.0.0.1:5000/connection/accept/${fromId}`, {
+          const res = await fetch(`http://vicyon.onrender.com/connection/accept/${fromId}`, {
             method: "POST",
             headers: { "Authorization": `Bearer ${token}` }
           });
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", async () => {
           const fromId = btn.dataset.id;
 
-          const res = await fetch(`http://127.0.0.1:5000/connection/decline/${fromId}`, {
+          const res = await fetch(`http://vicyon.onrender.com/connection/decline/${fromId}`, {
             method: "POST",
             headers: { "Authorization": `Bearer ${token}` }
           });
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ================= LOGOUT =================
   logoutBtn.addEventListener("click", async () => {
-    const res = await fetch("http://127.0.0.1:5000/logout", {
+    const res = await fetch("http://vicyon.onrender.com/logout", {
       method: "POST",
       headers: { "Authorization": `Bearer ${token}` }
     });
