@@ -9,7 +9,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
   message.className = "";
 
   try {
-    const res = await fetch("http://vicyon.onrender.com/login", {
+    const res = await fetch("https://vicyon.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
